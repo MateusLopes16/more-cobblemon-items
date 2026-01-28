@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "E": {
+      "item": "minecraft:diamond"
+    },
+    "M": {
+      "item": "minecraft:red_mushroom_block"
+    }
+  },
+  "pattern": [
+    "MAM",
+    "AEA",
+    "MAM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:brutebonnet_orb"
+  }
+}

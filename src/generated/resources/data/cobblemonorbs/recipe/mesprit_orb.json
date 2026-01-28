@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "P": {
+      "item": "minecraft:pink_dye"
+    }
+  },
+  "pattern": [
+    "PAP",
+    "ADA",
+    "PAP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:mesprit_orb"
+  }
+}

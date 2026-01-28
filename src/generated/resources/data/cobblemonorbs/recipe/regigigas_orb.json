@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "cobblemonorbs:regice_orb"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "R": {
+      "item": "cobblemonorbs:regirock_orb"
+    },
+    "S": {
+      "item": "cobblemonorbs:registeel_orb"
+    }
+  },
+  "pattern": [
+    "RIS",
+    "INI",
+    "SIR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:regigigas_orb"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "M": {
+      "item": "minecraft:magma_block"
+    }
+  },
+  "pattern": [
+    "IMI",
+    "MDM",
+    "IMI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:heatran_orb"
+  }
+}

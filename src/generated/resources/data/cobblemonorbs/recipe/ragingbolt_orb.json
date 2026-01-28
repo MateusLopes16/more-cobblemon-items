@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "LAL",
+    "ANA",
+    "LAL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:ragingbolt_orb"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:dragon_breath"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "pattern": [
+    "IDI",
+    "DRD",
+    "IDI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:ironjugulis_orb"
+  }
+}

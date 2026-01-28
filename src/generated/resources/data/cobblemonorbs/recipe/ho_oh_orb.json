@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "F": {
+      "item": "minecraft:fire_charge"
+    },
+    "G": {
+      "item": "minecraft:gold_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "GBG",
+    "FNF",
+    "GBG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:ho_oh_orb"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "B": {
+      "item": "minecraft:blue_dye"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "BFB",
+    "ADA",
+    "BFB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:latios_orb"
+  }
+}

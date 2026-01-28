@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "minecraft:magma_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "pattern": [
+    "MWM",
+    "WNW",
+    "MWM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:volcanion_orb"
+  }
+}

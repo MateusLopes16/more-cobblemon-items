@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "E": {
+      "item": "minecraft:end_stone"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "EAE",
+    "ENE",
+    "EAE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:deoxys_orb"
+  }
+}

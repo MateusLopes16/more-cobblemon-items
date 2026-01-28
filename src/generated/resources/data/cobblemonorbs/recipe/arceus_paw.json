@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    " G ",
+    "GNG",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:arceus_paw"
+  }
+}

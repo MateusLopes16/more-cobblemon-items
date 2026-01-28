@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_powder"
+    },
+    "C": {
+      "item": "minecraft:campfire"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "F": {
+      "item": "minecraft:fire_charge"
+    }
+  },
+  "pattern": [
+    "FCF",
+    "BDB",
+    "FCF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:moltres_orb"
+  }
+}

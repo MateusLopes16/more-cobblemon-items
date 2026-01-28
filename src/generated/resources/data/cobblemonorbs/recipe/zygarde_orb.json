@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "G": {
+      "item": "minecraft:green_dye"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "GEG",
+    "ENE",
+    "GEG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:zygarde_orb"
+  }
+}

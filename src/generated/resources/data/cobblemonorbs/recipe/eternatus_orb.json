@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:end_stone"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "S": {
+      "item": "minecraft:dragon_breath"
+    }
+  },
+  "pattern": [
+    "ENE",
+    "NSN",
+    "ENE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:eternatus_orb"
+  }
+}

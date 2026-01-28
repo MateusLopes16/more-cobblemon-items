@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:feather"
+    },
+    "H": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "P": {
+      "item": "minecraft:prismarine_shard"
+    }
+  },
+  "pattern": [
+    "FPF",
+    "HNH",
+    "FPF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:lugia_orb"
+  }
+}

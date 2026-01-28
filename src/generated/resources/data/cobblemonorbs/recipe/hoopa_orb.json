@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "G": {
+      "item": "minecraft:gold_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "EGE",
+    "GNG",
+    "EGE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:hoopa_orb"
+  }
+}

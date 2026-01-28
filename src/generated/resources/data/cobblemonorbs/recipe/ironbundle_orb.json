@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blue_ice"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "pattern": [
+    "IBI",
+    "BDB",
+    "IBI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:ironbundle_orb"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:dragon_breath"
+    },
+    "E": {
+      "item": "minecraft:emerald_block"
+    },
+    "G": {
+      "item": "minecraft:gold_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "EDE",
+    "GNG",
+    "EDE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:rayquaza_orb"
+  }
+}

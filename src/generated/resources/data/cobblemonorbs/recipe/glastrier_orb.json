@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blue_ice"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "minecraft:iron_horse_armor"
+    }
+  },
+  "pattern": [
+    "BIB",
+    "IDI",
+    "BIB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:glastrier_orb"
+  }
+}

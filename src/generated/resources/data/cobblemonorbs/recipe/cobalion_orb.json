@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "minecraft:iron_sword"
+    }
+  },
+  "pattern": [
+    "ISI",
+    "SDS",
+    "ISI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:cobalion_orb"
+  }
+}

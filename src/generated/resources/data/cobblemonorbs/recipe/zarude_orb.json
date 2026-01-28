@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "S": {
+      "item": "minecraft:soul_sand"
+    },
+    "V": {
+      "item": "minecraft:vine"
+    }
+  },
+  "pattern": [
+    "VSV",
+    "SDS",
+    "VSV"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:zarude_orb"
+  }
+}

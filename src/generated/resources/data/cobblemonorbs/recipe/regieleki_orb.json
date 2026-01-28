@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_block"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    }
+  },
+  "pattern": [
+    "LCL",
+    "CDC",
+    "LCL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:regieleki_orb"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:dragon_breath"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "R": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "pattern": [
+    "RDR",
+    "DNR",
+    "RDR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:koraidon_orb"
+  }
+}

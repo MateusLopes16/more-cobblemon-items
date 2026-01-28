@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "L": {
+      "item": "minecraft:oak_leaves"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "ILI",
+    "LNL",
+    "ILI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:ironleaves_orb"
+  }
+}

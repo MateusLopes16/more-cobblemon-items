@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:lava_bucket"
+    },
+    "M": {
+      "item": "minecraft:magma_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "MLM",
+    "LNL",
+    "MLM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:groudon_orb"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "M": {
+      "item": "cobblemonorbs:meltan_orb"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "MIM",
+    "INI",
+    "MIM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:melmetal_orb"
+  }
+}

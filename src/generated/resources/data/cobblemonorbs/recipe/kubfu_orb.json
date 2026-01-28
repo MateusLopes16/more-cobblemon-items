@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bamboo"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "BFB",
+    "FDF",
+    "BFB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:kubfu_orb"
+  }
+}

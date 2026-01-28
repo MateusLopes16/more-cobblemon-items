@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blue_dye"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "P": {
+      "item": "minecraft:prismarine_crystals"
+    }
+  },
+  "pattern": [
+    "BPB",
+    "PDP",
+    "BPB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:tapufini_orb"
+  }
+}

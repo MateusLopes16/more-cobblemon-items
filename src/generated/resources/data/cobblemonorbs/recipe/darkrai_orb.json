@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "S": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "pattern": [
+    "OSO",
+    "SNS",
+    "OSO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:darkrai_orb"
+  }
+}

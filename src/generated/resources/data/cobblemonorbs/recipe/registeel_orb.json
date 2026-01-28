@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "N": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "pattern": [
+    "INI",
+    "IDI",
+    "INI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:registeel_orb"
+  }
+}

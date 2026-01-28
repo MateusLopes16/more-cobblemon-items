@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "P": {
+      "item": "minecraft:prismarine_crystals"
+    }
+  },
+  "pattern": [
+    "PAP",
+    "ANA",
+    "PAP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:terapagos_orb"
+  }
+}

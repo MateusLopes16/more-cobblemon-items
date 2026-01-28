@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_block"
+    },
+    "C": {
+      "item": "cobblemonorbs:cosmoem_orb"
+    },
+    "G": {
+      "item": "minecraft:glow_ink_sac"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "ACG",
+    "CNA",
+    "GCA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:lunala_orb"
+  }
+}

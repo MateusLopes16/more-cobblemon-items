@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "R": {
+      "item": "minecraft:red_dye"
+    },
+    "S": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "pattern": [
+    "RSR",
+    "SNS",
+    "RSR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:yveltal_orb"
+  }
+}

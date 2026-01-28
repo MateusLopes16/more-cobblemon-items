@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:oak_leaves"
+    },
+    "M": {
+      "item": "minecraft:carved_pumpkin"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "LML",
+    "MNM",
+    "LML"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:ogerpon_orb"
+  }
+}

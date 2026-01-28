@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "Y": {
+      "item": "minecraft:yellow_dye"
+    }
+  },
+  "pattern": [
+    "YAY",
+    "ADA",
+    "YAY"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:uxie_orb"
+  }
+}

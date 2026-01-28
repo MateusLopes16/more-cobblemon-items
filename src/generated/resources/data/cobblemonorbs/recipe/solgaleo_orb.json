@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "cobblemonorbs:cosmoem_orb"
+    },
+    "G": {
+      "item": "minecraft:gold_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "S": {
+      "item": "minecraft:sunflower"
+    }
+  },
+  "pattern": [
+    "GCG",
+    "CNS",
+    "GCG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:solgaleo_orb"
+  }
+}

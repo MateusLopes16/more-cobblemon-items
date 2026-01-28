@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "K": {
+      "item": "cobblemonorbs:kubfu_orb"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "KDK",
+    "DND",
+    "KDK"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:urshifu_orb"
+  }
+}

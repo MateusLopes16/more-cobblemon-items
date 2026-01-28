@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "G": {
+      "item": "minecraft:green_dye"
+    },
+    "L": {
+      "item": "minecraft:oak_leaves"
+    }
+  },
+  "pattern": [
+    "GLG",
+    "LDL",
+    "GLG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:tapubulu_orb"
+  }
+}

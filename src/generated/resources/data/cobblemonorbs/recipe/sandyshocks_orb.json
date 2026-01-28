@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "E": {
+      "item": "minecraft:diamond"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    },
+    "S": {
+      "item": "minecraft:sand"
+    }
+  },
+  "pattern": [
+    "SAL",
+    "AEA",
+    "LAS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:sandyshocks_orb"
+  }
+}

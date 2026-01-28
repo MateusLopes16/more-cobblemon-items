@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blue_ice"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "BIB",
+    "INI",
+    "BIB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:kyurem_orb"
+  }
+}

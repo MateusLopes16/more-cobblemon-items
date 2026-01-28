@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "DAD",
+    "ANA",
+    "DAD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:diancie_orb"
+  }
+}

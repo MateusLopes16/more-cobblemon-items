@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glastrier_orb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cobblemonorbs:glastrier_orb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cobblemonorbs:calyrex_orb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_glastrier_orb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cobblemonorbs:calyrex_orb"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "D": {
+      "item": "minecraft:dragon_breath"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "pattern": [
+    "DBD",
+    "BRB",
+    "DBD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:regidrago_orb"
+  }
+}

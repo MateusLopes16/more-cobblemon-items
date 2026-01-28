@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:poppy"
+    },
+    "L": {
+      "item": "minecraft:oak_leaves"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "FLF",
+    "LNL",
+    "FLF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:shaymin_orb"
+  }
+}

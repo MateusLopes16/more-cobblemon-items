@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "ISI",
+    "SNS",
+    "ISI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:ironboulder_orb"
+  }
+}

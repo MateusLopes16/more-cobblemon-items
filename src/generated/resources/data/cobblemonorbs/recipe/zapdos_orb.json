@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "G": {
+      "item": "minecraft:glowstone"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    }
+  },
+  "pattern": [
+    "LGL",
+    "GDG",
+    "LGL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:zapdos_orb"
+  }
+}

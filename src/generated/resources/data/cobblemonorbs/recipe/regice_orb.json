@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blue_ice"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "minecraft:ice"
+    },
+    "P": {
+      "item": "minecraft:packed_ice"
+    }
+  },
+  "pattern": [
+    "BPB",
+    "IDI",
+    "BPB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:regice_orb"
+  }
+}

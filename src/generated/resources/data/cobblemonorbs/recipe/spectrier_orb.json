@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "item": "minecraft:diamond_horse_armor"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "S": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "pattern": [
+    "SHS",
+    "HNH",
+    "SHS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:spectrier_orb"
+  }
+}

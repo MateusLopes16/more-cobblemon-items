@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "E": {
+      "item": "minecraft:diamond"
+    },
+    "F": {
+      "item": "minecraft:fire_charge"
+    }
+  },
+  "pattern": [
+    "FAF",
+    "AEA",
+    "FAF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:slitherwing_orb"
+  }
+}

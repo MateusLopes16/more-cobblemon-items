@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    },
+    "Y": {
+      "item": "minecraft:yellow_dye"
+    }
+  },
+  "pattern": [
+    "YLY",
+    "LDL",
+    "YLY"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:tapukoko_orb"
+  }
+}

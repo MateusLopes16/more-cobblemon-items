@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "LGL",
+    "GNG",
+    "LGL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:zeraora_orb"
+  }
+}

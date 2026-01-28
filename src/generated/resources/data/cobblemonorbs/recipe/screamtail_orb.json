@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "E": {
+      "item": "minecraft:diamond"
+    },
+    "P": {
+      "item": "minecraft:pink_dye"
+    }
+  },
+  "pattern": [
+    "PAP",
+    "AEA",
+    "PAP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:screamtail_orb"
+  }
+}

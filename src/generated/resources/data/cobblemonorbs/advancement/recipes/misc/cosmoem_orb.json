@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cosmog_orb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cobblemonorbs:cosmog_orb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cobblemonorbs:cosmoem_orb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cosmog_orb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cobblemonorbs:cosmoem_orb"
+    ]
+  }
+}

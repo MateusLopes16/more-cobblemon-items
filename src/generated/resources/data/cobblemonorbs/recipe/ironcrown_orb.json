@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_block"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "IAI",
+    "ANA",
+    "IAI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:ironcrown_orb"
+  }
+}

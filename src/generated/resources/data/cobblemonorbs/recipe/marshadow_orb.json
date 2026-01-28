@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "S": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SNS",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:marshadow_orb"
+  }
+}

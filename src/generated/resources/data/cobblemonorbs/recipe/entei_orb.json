@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "L": {
+      "item": "minecraft:lava_bucket"
+    },
+    "M": {
+      "item": "minecraft:magma_block"
+    }
+  },
+  "pattern": [
+    "BLB",
+    "MDM",
+    "BLB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:entei_orb"
+  }
+}

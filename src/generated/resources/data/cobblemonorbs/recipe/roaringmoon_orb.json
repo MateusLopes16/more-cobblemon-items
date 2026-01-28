@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "D": {
+      "item": "minecraft:dragon_breath"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "DAD",
+    "ANA",
+    "DAD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:roaringmoon_orb"
+  }
+}

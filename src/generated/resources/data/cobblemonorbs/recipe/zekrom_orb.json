@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:lightning_rod"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    "OLO",
+    "LNL",
+    "OLO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:zekrom_orb"
+  }
+}

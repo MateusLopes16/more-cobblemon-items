@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:deepslate"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "S": {
+      "item": "minecraft:sandstone"
+    }
+  },
+  "pattern": [
+    "SDS",
+    "RDR",
+    "SDS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:regirock_orb"
+  }
+}

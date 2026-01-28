@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "cobblemonorbs:cosmog_orb"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "N": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "pattern": [
+    "CDC",
+    "DND",
+    "CDC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:cosmoem_orb"
+  }
+}

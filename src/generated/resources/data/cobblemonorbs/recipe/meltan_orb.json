@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "N": {
+      "item": "minecraft:gold_nugget"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "INI",
+    "NRN",
+    "INI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:meltan_orb"
+  }
+}

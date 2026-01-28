@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "L": {
+      "item": "minecraft:dark_oak_leaves"
+    }
+  },
+  "pattern": [
+    "LAL",
+    "ADA",
+    "LAL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:wochien_orb"
+  }
+}

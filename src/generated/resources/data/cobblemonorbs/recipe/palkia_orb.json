@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "P": {
+      "item": "minecraft:pink_dye"
+    }
+  },
+  "pattern": [
+    "PEP",
+    "ENE",
+    "PEP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:palkia_orb"
+  }
+}

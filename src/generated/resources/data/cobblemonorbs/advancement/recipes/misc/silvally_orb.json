@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cobblemonorbs:silvally_orb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_type_null_orb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cobblemonorbs:type_null_orb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_type_null_orb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cobblemonorbs:silvally_orb"
+    ]
+  }
+}

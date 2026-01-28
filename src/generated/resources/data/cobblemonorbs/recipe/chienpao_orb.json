@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "B": {
+      "item": "minecraft:blue_ice"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "BAB",
+    "ADA",
+    "BAB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:chienpao_orb"
+  }
+}

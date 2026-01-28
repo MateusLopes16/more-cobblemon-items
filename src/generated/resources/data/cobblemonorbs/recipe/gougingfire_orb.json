@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "F": {
+      "item": "minecraft:fire_charge"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "FAF",
+    "ANA",
+    "FAF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cobblemonorbs:gougingfire_orb"
+  }
+}
