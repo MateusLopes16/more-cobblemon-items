@@ -1,6 +1,8 @@
 package com.cobblemonorbs;
 
+import com.cobblemonorbs.config.ConfigFileManager;
 import com.cobblemonorbs.config.OrbConfig;
+import com.cobblemonorbs.config.RecipeConfigGenerator;
 import com.cobblemonorbs.registry.ModCreativeTabs;
 import com.cobblemonorbs.registry.ModItems;
 import com.mojang.logging.LogUtils;
@@ -12,6 +14,8 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
+
+import java.util.ArrayList;
 
 /**
  * Main mod class for Cobblemon Legendary Orbs.
@@ -45,6 +49,38 @@ public class CobblemonOrbs {
     }
     
     private void commonSetup(final FMLCommonSetupEvent event) {
+        // Initialize config file manager (creates config folder structure)
+        event.enqueueWork(() -> {
+            ConfigFileManager.initialize();
+            
+            // Generate item configs for all registered items
+            var itemIds = new ArrayList<String>();
+            ModItems.getLegendaryOrbs().forEach((id, item) -> itemIds.add(item.getId().getPath()));
+            ModItems.getMythicalOrbs().forEach((id, item) -> itemIds.add(item.getId().getPath()));
+            ModItems.getParadoxOrbs().forEach((id, item) -> itemIds.add(item.getId().getPath()));
+            itemIds.add("arceus_orb");
+            itemIds.add("arceus_paw");
+            itemIds.add("arceus_crown");
+            itemIds.add("green_gem");
+            itemIds.add("shiny_orb");
+            itemIds.add("ultimate_orb");
+            itemIds.add("ultimate_shiny_orb");
+            itemIds.add("legendary_shiny_orb");
+            itemIds.add("legendary_ultimate_orb");
+            itemIds.add("legendary_ultimate_shiny_orb");
+            itemIds.add("mythical_shiny_orb");
+            itemIds.add("mythical_ultimate_orb");
+            itemIds.add("mythical_ultimate_shiny_orb");
+            itemIds.add("paradox_shiny_orb");
+            itemIds.add("paradox_ultimate_orb");
+            itemIds.add("paradox_ultimate_shiny_orb");
+            
+            ConfigFileManager.generateItemConfigs(itemIds);
+            
+            // Export recipes to config folder for customization
+            RecipeConfigGenerator.exportRecipesToConfig();
+        });
+        
         LOGGER.info("Cobblemon Legendary Orbs common setup complete!");
     }
     

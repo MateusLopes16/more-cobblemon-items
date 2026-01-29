@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "cobblemonorbs:item/orb_legendary"
+    "layer0": "cobblemonorbs:item/shifours"
   }
 }

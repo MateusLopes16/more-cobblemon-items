@@ -51,17 +51,61 @@ public class ModItemModelProvider implements DataProvider {
         simpleOrbItem(ModItems.PARADOX_ULTIMATE_ORB, "orb_paradox_ultimate");
         simpleOrbItem(ModItems.PARADOX_ULTIMATE_SHINY_ORB, "orb_paradox_ultimate_shiny");
         
-        // Register all legendary orbs
-        ModItems.getLegendaryOrbs().forEach((pokemonId, item) -> 
-            simpleOrbItem(item, "orb_legendary"));
+        // Register all legendary orbs - use individual textures if available
+        ModItems.getLegendaryOrbs().forEach((pokemonId, item) -> {
+            String textureName = getTextureNameForPokemon(pokemonId);
+            simpleOrbItem(item, textureName);
+        });
         
-        // Register all mythical orbs
-        ModItems.getMythicalOrbs().forEach((pokemonId, item) -> 
-            simpleOrbItem(item, "orb_mythical"));
+        // Register all mythical orbs - use individual textures if available
+        ModItems.getMythicalOrbs().forEach((pokemonId, item) -> {
+            String textureName = getTextureNameForPokemon(pokemonId);
+            simpleOrbItem(item, textureName);
+        });
         
-        // Register all paradox orbs
-        ModItems.getParadoxOrbs().forEach((pokemonId, item) -> 
-            simpleOrbItem(item, "orb_paradox"));
+        // Register all paradox orbs - use individual textures if available
+        ModItems.getParadoxOrbs().forEach((pokemonId, item) -> {
+            String textureName = getTextureNameForPokemon(pokemonId);
+            simpleOrbItem(item, textureName);
+        });
+    }
+    
+    /**
+     * Maps Pokémon IDs to their texture file names.
+     * Some textures have different names than the Pokémon ID (e.g., ho-oh -> hoho).
+     * Falls back to orb_default if no specific texture exists.
+     */
+    private String getTextureNameForPokemon(String pokemonId) {
+        // Map of pokemonId -> texture name for textures with different names
+        return switch (pokemonId) {
+            case "ho-oh" -> "hoho";
+            case "moltres" -> "sulfura";
+            case "cobalion" -> "cobaltium";
+            case "terrakion" -> "terrakium";
+            case "virizion" -> "viridium";
+            case "thundurus" -> "fulguris";
+            case "landorus" -> "boreas";
+            case "type-null" -> "type0";
+            case "silvally" -> "silvalie";
+            case "tapukoko" -> "tokorico";
+            case "tapulele" -> "tokopiyon";
+            case "tapubulu" -> "tokotoro";
+            case "tapufini" -> "tokopisco";
+            case "cosmoem" -> "cosmovoum";
+            case "eternatus" -> "ethernatos";
+            case "urshifu" -> "shifours";
+            case "kubfu" -> "wushours";
+            case "enamorus" -> "enamorus";
+            // These have matching texture names
+            case "articuno", "zapdos", "mewtwo", "raikou", "entei", "suicune", "lugia",
+                 "regirock", "regice", "registeel", "latias", "latios", "kyogre", "groudon", "rayquaza",
+                 "uxie", "mesprit", "azelf", "dialga", "palkia", "heatran", "regigigas", "giratina", "cresselia",
+                 "reshiram", "zekrom", "kyurem", "tornadus",
+                 "xerneas", "yveltal", "zygarde", "cosmog", "solgaleo", "lunala", "necrozma",
+                 "zacian", "zamazenta", "regieleki", "regidrago" -> pokemonId;
+            // Default fallback for textures not yet created
+            default -> "orb_default";
+        };
     }
     
     private void simpleItem(DeferredItem<Item> item, String textureName) {
