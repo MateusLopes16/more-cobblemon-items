@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "cobblemonorbs:configurable_recipe",
+      "item": "wo_chien_orb"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {

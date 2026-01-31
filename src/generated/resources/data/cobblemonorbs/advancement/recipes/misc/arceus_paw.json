@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "cobblemonorbs:configurable_recipe",
+      "item": "arceus_paw"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_nether_star": {

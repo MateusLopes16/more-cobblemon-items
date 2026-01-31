@@ -102,7 +102,9 @@ public class ModItemModelProvider implements DataProvider {
                  "uxie", "mesprit", "azelf", "dialga", "palkia", "heatran", "regigigas", "giratina", "cresselia",
                  "reshiram", "zekrom", "kyurem", "tornadus",
                  "xerneas", "yveltal", "zygarde", "cosmog", "solgaleo", "lunala", "necrozma",
-                 "zacian", "zamazenta", "regieleki", "regidrago" -> pokemonId;
+                 "zacian", "zamazenta", "regieleki", "regidrago",
+                 // Mythical Pokémon with matching texture names
+                 "mew", "celebi", "jirachi", "deoxys", "darkrai" -> pokemonId;
             // Default fallback for textures not yet created
             default -> "orb_default";
         };

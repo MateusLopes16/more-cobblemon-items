@@ -3,6 +3,7 @@ package com.cobblemonorbs;
 import com.cobblemonorbs.config.ConfigFileManager;
 import com.cobblemonorbs.config.OrbConfig;
 import com.cobblemonorbs.config.RecipeConfigGenerator;
+import com.cobblemonorbs.registry.ModConditions;
 import com.cobblemonorbs.registry.ModCreativeTabs;
 import com.cobblemonorbs.registry.ModItems;
 import com.mojang.logging.LogUtils;
@@ -38,6 +39,9 @@ public class CobblemonOrbs {
         
         // Register creative tabs
         ModCreativeTabs.register(modEventBus);
+        
+        // Register recipe conditions
+        ModConditions.register(modEventBus);
         
         // Register server events
         NeoForge.EVENT_BUS.register(this);

@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "cobblemonorbs:configurable_recipe",
+      "item": "green_gem"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_emerald": {

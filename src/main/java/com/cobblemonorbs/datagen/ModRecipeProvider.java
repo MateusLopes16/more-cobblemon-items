@@ -1,6 +1,7 @@
 package com.cobblemonorbs.datagen;
 
 import com.cobblemonorbs.CobblemonOrbs;
+import com.cobblemonorbs.config.ConfigurableRecipeCondition;
 import com.cobblemonorbs.registry.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -22,6 +23,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(output, registries);
     }
     
+    /**
+     * Helper method to wrap recipe output with configurable condition.
+     * This allows recipes to be disabled via the config files.
+     */
+    private RecipeOutput withCondition(RecipeOutput output, String itemId) {
+        return output.withConditions(new ConfigurableRecipeCondition(itemId));
+    }
+    
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
         // ============================================
@@ -36,7 +45,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('E', Items.EMERALD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_emerald", has(Items.EMERALD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "green_gem"));
         
         // Arceus Paw = 4 Gold Blocks + Nether Star
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ARCEUS_PAW.get())
@@ -46,7 +55,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GOLD_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "arceus_paw"));
         
         // Arceus Crown = 3 Netherite Ingots + 2 Gold Blocks + Diamond Block
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ARCEUS_CROWN.get())
@@ -57,7 +66,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GOLD_BLOCK)
             .define('D', Items.DIAMOND_BLOCK)
             .unlockedBy("has_netherite", has(Items.NETHERITE_INGOT))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "arceus_crown"));
         
         // ============================================
         // Arceus Orb (Special Recipe with custom items)
@@ -72,7 +81,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', ModItems.GREEN_GEM.get())
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_arceus_crown", has(ModItems.ARCEUS_CROWN.get()))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "arceus_orb"));
         
         // ============================================
         // Generation 1 Legendary Orbs
@@ -88,7 +97,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('P', Items.PRISMARINE_CRYSTALS)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_blue_ice", has(Items.BLUE_ICE))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "articuno_orb"));
         
         // Zapdos Orb - Electric themed (Lightning Rod + Gold + Glowstone)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZAPDOS_ORB.get())
@@ -99,7 +108,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GLOWSTONE)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_lightning_rod", has(Items.LIGHTNING_ROD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "zapdos_orb"));
         
         // Moltres Orb - Fire themed (Blaze Powder + Fire Charge + Campfire)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MOLTRES_ORB.get())
@@ -111,7 +120,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('B', Items.BLAZE_POWDER)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_blaze_powder", has(Items.BLAZE_POWDER))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "moltres_orb"));
         
         // Mewtwo Orb - Psychic themed (Ender Eye + Amethyst + Obsidian)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MEWTWO_ORB.get())
@@ -123,7 +132,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('O', Items.OBSIDIAN)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "mewtwo_orb"));
         
         // ============================================
         // Generation 2 Legendary Orbs
@@ -139,7 +148,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('C', Items.COPPER_BLOCK)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_lightning_rod", has(Items.LIGHTNING_ROD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "raikou_orb"));
         
         // Entei Orb - Fire/Beast themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENTEI_ORB.get())
@@ -151,7 +160,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('M', Items.MAGMA_BLOCK)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_blaze_rod", has(Items.BLAZE_ROD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "entei_orb"));
         
         // Suicune Orb - Water/Beast themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUICUNE_ORB.get())
@@ -163,7 +172,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('H', Items.HEART_OF_THE_SEA)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_heart_of_sea", has(Items.HEART_OF_THE_SEA))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "suicune_orb"));
         
         // Lugia Orb - Psychic/Flying/Sea themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUGIA_ORB.get())
@@ -175,7 +184,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('H', Items.HEART_OF_THE_SEA)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "lugia_orb"));
         
         // Ho-Oh Orb - Fire/Flying/Rainbow themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HO_OH_ORB.get())
@@ -187,7 +196,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('F', Items.FIRE_CHARGE)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "ho_oh_orb"));
         
         // ============================================
         // Generation 3 Legendary Orbs
@@ -202,7 +211,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('D', Items.DEEPSLATE)
             .define('R', Items.REDSTONE_BLOCK)
             .unlockedBy("has_redstone_block", has(Items.REDSTONE_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "regirock_orb"));
         
         // Regice Orb - Ice themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REGICE_ORB.get())
@@ -214,7 +223,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('I', Items.ICE)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_blue_ice", has(Items.BLUE_ICE))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "regice_orb"));
         
         // Registeel Orb - Steel themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REGISTEEL_ORB.get())
@@ -225,7 +234,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('N', Items.NETHERITE_SCRAP)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_netherite_scrap", has(Items.NETHERITE_SCRAP))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "registeel_orb"));
         
         // Latias Orb - Psychic/Dragon (Red themed)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LATIAS_ORB.get())
@@ -237,7 +246,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "latias_orb"));
         
         // Latios Orb - Psychic/Dragon (Blue themed)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LATIOS_ORB.get())
@@ -249,7 +258,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "latios_orb"));
         
         // Kyogre Orb - Water themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KYOGRE_ORB.get())
@@ -260,7 +269,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('H', Items.HEART_OF_THE_SEA)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "kyogre_orb"));
         
         // Groudon Orb - Ground/Fire themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GROUDON_ORB.get())
@@ -271,7 +280,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('L', Items.LAVA_BUCKET)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "groudon_orb"));
         
         // Rayquaza Orb - Dragon/Flying themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RAYQUAZA_ORB.get())
@@ -283,7 +292,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GOLD_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "rayquaza_orb"));
         
         // ============================================
         // Generation 4 Legendary Orbs
@@ -298,7 +307,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "uxie_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MESPRIT_ORB.get())
             .pattern("PAP")
@@ -308,7 +317,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "mesprit_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.AZELF_ORB.get())
             .pattern("BAB")
@@ -318,7 +327,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "azelf_orb"));
         
         // Dialga Orb - Steel/Dragon (Time themed)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DIALGA_ORB.get())
@@ -330,7 +339,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('I', Items.IRON_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "dialga_orb"));
         
         // Palkia Orb - Water/Dragon (Space themed)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PALKIA_ORB.get())
@@ -341,7 +350,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('E', Items.ENDER_PEARL)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "palkia_orb"));
         
         // Heatran Orb - Fire/Steel themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HEATRAN_ORB.get())
@@ -352,7 +361,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('M', Items.MAGMA_BLOCK)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_magma_block", has(Items.MAGMA_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "heatran_orb"));
         
         // Regigigas Orb - Normal (needs all 3 Regis)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REGIGIGAS_ORB.get())
@@ -364,7 +373,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', ModItems.REGISTEEL_ORB.get())
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_registeel_orb", has(ModItems.REGISTEEL_ORB.get()))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "regigigas_orb"));
         
         // Giratina Orb - Ghost/Dragon themed
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GIRATINA_ORB.get())
@@ -375,7 +384,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.SOUL_SAND)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "giratina_orb"));
         
         // Cresselia Orb - Psychic (Moon themed)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CRESSELIA_ORB.get())
@@ -386,7 +395,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_glow_ink", has(Items.GLOW_INK_SAC))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "cresselia_orb"));
         
         // ============================================
         // Generation 5 Legendary Orbs
@@ -401,7 +410,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.IRON_SWORD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_iron_sword", has(Items.IRON_SWORD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "cobalion_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TERRAKION_ORB.get())
             .pattern("RSR")
@@ -411,7 +420,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.STONE_SWORD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_stone_sword", has(Items.STONE_SWORD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "terrakion_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.VIRIZION_ORB.get())
             .pattern("LSL")
@@ -421,7 +430,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.WOODEN_SWORD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_wooden_sword", has(Items.WOODEN_SWORD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "virizion_orb"));
         
         // Forces of Nature
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TORNADUS_ORB.get())
@@ -432,7 +441,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GLASS)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_feather", has(Items.FEATHER))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "tornadus_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.THUNDURUS_ORB.get())
             .pattern("LGL")
@@ -442,7 +451,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GLOWSTONE)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_lightning_rod", has(Items.LIGHTNING_ROD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "thundurus_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LANDORUS_ORB.get())
             .pattern("DSD")
@@ -452,7 +461,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.SAND)
             .define('E', Items.DIAMOND)
             .unlockedBy("has_dirt", has(Items.DIRT))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "landorus_orb"));
         
         // Tao Trio
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RESHIRAM_ORB.get())
@@ -463,7 +472,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('F', Items.FIRE_CHARGE)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "reshiram_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZEKROM_ORB.get())
             .pattern("OLO")
@@ -473,7 +482,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('L', Items.LIGHTNING_ROD)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "zekrom_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KYUREM_ORB.get())
             .pattern("BIB")
@@ -483,7 +492,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('I', Items.IRON_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "kyurem_orb"));
         
         // ============================================
         // Generation 6 Legendary Orbs
@@ -497,7 +506,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GLOW_BERRIES)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "xerneas_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.YVELTAL_ORB.get())
             .pattern("RSR")
@@ -507,7 +516,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.SOUL_SAND)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "yveltal_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZYGARDE_ORB.get())
             .pattern("GEG")
@@ -517,7 +526,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('E', Items.EMERALD)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "zygarde_orb"));
         
         // ============================================
         // Generation 7 Legendary Orbs
@@ -531,7 +540,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('D', Items.DIAMOND)
             .define('N', Items.NETHERITE_SCRAP)
             .unlockedBy("has_netherite_scrap", has(Items.NETHERITE_SCRAP))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "type_null_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SILVALLY_ORB.get())
             .pattern("TDT")
@@ -541,7 +550,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('D', Items.DIAMOND_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_type_null_orb", has(ModItems.TYPE_NULL_ORB.get()))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "silvally_orb"));
         
         // Tapu Guardians
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TAPU_KOKO_ORB.get())
@@ -552,7 +561,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('L', Items.LIGHTNING_ROD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_lightning_rod", has(Items.LIGHTNING_ROD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "tapu_koko_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TAPU_LELE_ORB.get())
             .pattern("PAP")
@@ -562,7 +571,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "tapu_lele_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TAPU_BULU_ORB.get())
             .pattern("GLG")
@@ -572,7 +581,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('L', Items.OAK_LEAVES)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_leaves", has(Items.OAK_LEAVES))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "tapu_bulu_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TAPU_FINI_ORB.get())
             .pattern("BPB")
@@ -582,7 +591,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('P', Items.PRISMARINE_CRYSTALS)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_prismarine", has(Items.PRISMARINE_CRYSTALS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "tapu_fini_orb"));
         
         // Cosmog line
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COSMOG_ORB.get())
@@ -593,7 +602,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_glow_ink", has(Items.GLOW_INK_SAC))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "cosmog_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COSMOEM_ORB.get())
             .pattern("CDC")
@@ -603,7 +612,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('D', Items.DIAMOND_BLOCK)
             .define('N', Items.GOLD_BLOCK)
             .unlockedBy("has_cosmog_orb", has(ModItems.COSMOG_ORB.get()))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "cosmoem_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SOLGALEO_ORB.get())
             .pattern("GCG")
@@ -614,7 +623,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('N', Items.NETHER_STAR)
             .define('S', Items.SUNFLOWER)
             .unlockedBy("has_cosmoem_orb", has(ModItems.COSMOEM_ORB.get()))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "solgaleo_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LUNALA_ORB.get())
             .pattern("ACG")
@@ -625,7 +634,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('N', Items.NETHER_STAR)
             .define('G', Items.GLOW_INK_SAC)
             .unlockedBy("has_cosmoem_orb", has(ModItems.COSMOEM_ORB.get()))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "lunala_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.NECROZMA_ORB.get())
             .pattern("OPO")
@@ -635,7 +644,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('P', Items.PRISMARINE_CRYSTALS)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "necrozma_orb"));
         
         // ============================================
         // Generation 8 Legendary Orbs
@@ -650,7 +659,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GOLD_BLOCK)
             .define('D', Items.DIAMOND_BLOCK)
             .unlockedBy("has_netherite_sword", has(Items.NETHERITE_SWORD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "zacian_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZAMAZENTA_ORB.get())
             .pattern("SNS")
@@ -661,7 +670,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GOLD_BLOCK)
             .define('D', Items.DIAMOND_BLOCK)
             .unlockedBy("has_shield", has(Items.SHIELD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "zamazenta_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ETERNATUS_ORB.get())
             .pattern("ENE")
@@ -671,7 +680,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('N', Items.NETHER_STAR)
             .define('S', Items.DRAGON_BREATH)
             .unlockedBy("has_dragon_breath", has(Items.DRAGON_BREATH))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "eternatus_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KUBFU_ORB.get())
             .pattern("BFB")
@@ -681,7 +690,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('F', Items.FEATHER)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_bamboo", has(Items.BAMBOO))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "kubfu_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.URSHIFU_ORB.get())
             .pattern("KDK")
@@ -691,7 +700,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('D', Items.DIAMOND_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_kubfu_orb", has(ModItems.KUBFU_ORB.get()))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "urshifu_orb"));
         
         // New Regis
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REGIELEKI_ORB.get())
@@ -702,7 +711,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('C', Items.COPPER_BLOCK)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_copper_block", has(Items.COPPER_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "regieleki_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REGIDRAGO_ORB.get())
             .pattern("DBD")
@@ -712,7 +721,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('B', Items.BONE_BLOCK)
             .define('R', Items.REDSTONE_BLOCK)
             .unlockedBy("has_dragon_breath", has(Items.DRAGON_BREATH))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "regidrago_orb"));
         
         // Horses
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GLASTRIER_ORB.get())
@@ -723,7 +732,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('I', Items.IRON_HORSE_ARMOR)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_blue_ice", has(Items.BLUE_ICE))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "glastrier_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SPECTRIER_ORB.get())
             .pattern("SHS")
@@ -733,7 +742,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('H', Items.DIAMOND_HORSE_ARMOR)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_soul_sand", has(Items.SOUL_SAND))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "spectrier_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CALYREX_ORB.get())
             .pattern("GCS")
@@ -745,7 +754,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('N', Items.NETHER_STAR)
             .define('R', Items.CARROT)
             .unlockedBy("has_glastrier_orb", has(ModItems.GLASTRIER_ORB.get()))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "calyrex_orb"));
         
         // ============================================
         // Generation 9 Legendary Orbs
@@ -760,7 +769,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "wo_chien_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CHIEN_PAO_ORB.get())
             .pattern("BAB")
@@ -770,7 +779,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "chien_pao_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TING_LU_ORB.get())
             .pattern("DAD")
@@ -780,7 +789,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('E', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "ting_lu_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CHI_YU_ORB.get())
             .pattern("FAF")
@@ -790,7 +799,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "chi_yu_orb"));
         
         // Box Legendaries
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KORAIDON_ORB.get())
@@ -801,7 +810,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('D', Items.DRAGON_BREATH)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "koraidon_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MIRAIDON_ORB.get())
             .pattern("PDP")
@@ -811,7 +820,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('D', Items.DRAGON_BREATH)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "miraidon_orb"));
         
         // Loyal Three
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OKIDOGI_ORB.get())
@@ -822,7 +831,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('B', Items.BONE)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_bone", has(Items.BONE))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "okidogi_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MUNKIDORI_ORB.get())
             .pattern("GAG")
@@ -832,7 +841,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_amethyst", has(Items.AMETHYST_SHARD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "munkidori_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.FEZANDIPITI_ORB.get())
             .pattern("PFP")
@@ -842,7 +851,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('F', Items.FEATHER)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_feather", has(Items.FEATHER))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "fezandipiti_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OGERPON_ORB.get())
             .pattern("LML")
@@ -852,7 +861,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('M', Items.CARVED_PUMPKIN)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_carved_pumpkin", has(Items.CARVED_PUMPKIN))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "ogerpon_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TERAPAGOS_ORB.get())
             .pattern("PAP")
@@ -862,7 +871,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "terapagos_orb"));
         
         // ============================================
         // Mythical Pokémon Orbs
@@ -877,7 +886,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "mew_orb"));
         
         // Celebi - Grass/Psychic (Time travel)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CELEBI_ORB.get())
@@ -888,7 +897,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('C', Items.CLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "celebi_orb"));
         
         // Jirachi - Steel/Psychic (Wish/Star)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JIRACHI_ORB.get())
@@ -899,7 +908,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('I', Items.IRON_INGOT)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "jirachi_orb"));
         
         // Deoxys - Psychic (Space)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DEOXYS_ORB.get())
@@ -910,7 +919,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "deoxys_orb"));
         
         // Phione - Water
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PHIONE_ORB.get())
@@ -921,7 +930,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('W', Items.WATER_BUCKET)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_prismarine", has(Items.PRISMARINE_SHARD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "phione_orb"));
         
         // Manaphy - Water
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MANAPHY_ORB.get())
@@ -932,7 +941,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('P', Items.PRISMARINE_CRYSTALS)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_heart_of_sea", has(Items.HEART_OF_THE_SEA))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "manaphy_orb"));
         
         // Darkrai - Dark
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DARKRAI_ORB.get())
@@ -943,7 +952,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.SOUL_SAND)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "darkrai_orb"));
         
         // Shaymin - Grass
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHAYMIN_ORB.get())
@@ -954,7 +963,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('L', Items.OAK_LEAVES)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "shaymin_orb"));
         
         // Victini - Psychic/Fire
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.VICTINI_ORB.get())
@@ -965,7 +974,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "victini_orb"));
         
         // Keldeo - Water/Fighting
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.KELDEO_ORB.get())
@@ -976,7 +985,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.IRON_SWORD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_iron_sword", has(Items.IRON_SWORD))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "keldeo_orb"));
         
         // Meloetta - Normal/Psychic
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MELOETTA_ORB.get())
@@ -988,7 +997,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GREEN_DYE)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_note_block", has(Items.NOTE_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "meloetta_orb"));
         
         // Genesect - Bug/Steel
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GENESECT_ORB.get())
@@ -1000,7 +1009,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('R', Items.REDSTONE_BLOCK)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_netherite", has(Items.NETHERITE_INGOT))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "genesect_orb"));
         
         // Diancie - Rock/Fairy
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DIANCIE_ORB.get())
@@ -1011,7 +1020,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "diancie_orb"));
         
         // Hoopa - Psychic/Ghost
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HOOPA_ORB.get())
@@ -1022,7 +1031,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GOLD_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "hoopa_orb"));
         
         // Volcanion - Fire/Water
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.VOLCANION_ORB.get())
@@ -1033,7 +1042,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('W', Items.WATER_BUCKET)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "volcanion_orb"));
         
         // Magearna - Steel/Fairy
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MAGEARNA_ORB.get())
@@ -1044,7 +1053,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GOLD_INGOT)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "magearna_orb"));
         
         // Marshadow - Fighting/Ghost
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARSHADOW_ORB.get())
@@ -1054,7 +1063,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.SOUL_SAND)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "marshadow_orb"));
         
         // Zeraora - Electric
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZERAORA_ORB.get())
@@ -1065,7 +1074,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('G', Items.GOLD_INGOT)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "zeraora_orb"));
         
         // Meltan - Steel
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MELTAN_ORB.get())
@@ -1076,7 +1085,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('N', Items.GOLD_NUGGET)
             .define('R', Items.REDSTONE)
             .unlockedBy("has_iron_nugget", has(Items.IRON_NUGGET))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "meltan_orb"));
         
         // Melmetal - Steel
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MELMETAL_ORB.get())
@@ -1087,7 +1096,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('I', Items.IRON_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_meltan_orb", has(ModItems.MELTAN_ORB.get()))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "melmetal_orb"));
         
         // Zarude - Dark/Grass
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ZARUDE_ORB.get())
@@ -1098,7 +1107,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.SOUL_SAND)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_vine", has(Items.VINE))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "zarude_orb"));
         
         // Pecharunt - Poison/Ghost
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PECHARUNT_ORB.get())
@@ -1109,7 +1118,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.SOUL_SAND)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_fermented_spider_eye", has(Items.FERMENTED_SPIDER_EYE))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "pecharunt_orb"));
         
         // ============================================
         // Paradox Pokémon Orbs
@@ -1124,7 +1133,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('E', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "great_tusk_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SCREAM_TAIL_ORB.get())
             .pattern("PAP")
@@ -1134,7 +1143,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('E', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "scream_tail_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRUTE_BONNET_ORB.get())
             .pattern("MAM")
@@ -1144,7 +1153,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('E', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "brute_bonnet_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.FLUTTER_MANE_ORB.get())
             .pattern("GAG")
@@ -1154,7 +1163,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('E', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "flutter_mane_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SLITHER_WING_ORB.get())
             .pattern("FAF")
@@ -1164,7 +1173,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('E', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "slither_wing_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SANDY_SHOCKS_ORB.get())
             .pattern("SAL")
@@ -1175,7 +1184,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('E', Items.DIAMOND)
             .unlockedBy("has_ancient_debris", has(Items.ANCIENT_DEBRIS))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "sandy_shocks_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ROARING_MOON_ORB.get())
             .pattern("DAD")
@@ -1185,7 +1194,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "roaring_moon_orb"));
         
         // Future Paradox (Violet) - Use Iron Blocks
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_TREADS_ORB.get())
@@ -1196,7 +1205,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('R', Items.REDSTONE_BLOCK)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_iron_block", has(Items.IRON_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_treads_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_BUNDLE_ORB.get())
             .pattern("IBI")
@@ -1206,7 +1215,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('B', Items.BLUE_ICE)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_iron_block", has(Items.IRON_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_bundle_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_HANDS_ORB.get())
             .pattern("IRI")
@@ -1217,7 +1226,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('L', Items.LIGHTNING_ROD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_iron_block", has(Items.IRON_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_hands_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_JUGULIS_ORB.get())
             .pattern("IDI")
@@ -1227,7 +1236,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('D', Items.DRAGON_BREATH)
             .define('R', Items.REDSTONE_BLOCK)
             .unlockedBy("has_iron_block", has(Items.IRON_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_jugulis_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_MOTH_ORB.get())
             .pattern("IFI")
@@ -1237,7 +1246,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('F', Items.FIRE_CHARGE)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_iron_block", has(Items.IRON_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_moth_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_THORNS_ORB.get())
             .pattern("ILI")
@@ -1247,7 +1256,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('L', Items.LIGHTNING_ROD)
             .define('D', Items.DIAMOND)
             .unlockedBy("has_iron_block", has(Items.IRON_BLOCK))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_thorns_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_VALIANT_ORB.get())
             .pattern("IAI")
@@ -1257,7 +1266,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_SHARD)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_valiant_orb"));
         
         // DLC Paradox
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WALKING_WAKE_ORB.get())
@@ -1268,7 +1277,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "walking_wake_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_LEAVES_ORB.get())
             .pattern("ILI")
@@ -1278,7 +1287,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('L', Items.OAK_LEAVES)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_leaves_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOUGING_FIRE_ORB.get())
             .pattern("FAF")
@@ -1288,7 +1297,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "gouging_fire_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RAGING_BOLT_ORB.get())
             .pattern("LAL")
@@ -1298,7 +1307,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.ANCIENT_DEBRIS)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "raging_bolt_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_CROWN_ORB.get())
             .pattern("IAI")
@@ -1308,7 +1317,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('A', Items.AMETHYST_BLOCK)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_crown_orb"));
         
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_BOULDER_ORB.get())
             .pattern("ISI")
@@ -1318,6 +1327,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             .define('S', Items.STONE)
             .define('N', Items.NETHER_STAR)
             .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
-            .save(recipeOutput);
+            .save(withCondition(recipeOutput, "iron_boulder_orb"));
     }
 }
