@@ -66,6 +66,10 @@ public class CobblemonOrbs {
             itemIds.add("arceus_paw");
             itemIds.add("arceus_crown");
             itemIds.add("green_gem");
+            itemIds.add("random_orb");
+            itemIds.add("legendary_orb");
+            itemIds.add("mythical_orb");
+            itemIds.add("paradox_orb");
             itemIds.add("shiny_orb");
             itemIds.add("ultimate_orb");
             itemIds.add("ultimate_shiny_orb");

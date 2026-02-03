@@ -34,6 +34,12 @@ public class ModItemModelProvider implements DataProvider {
         simpleItem(ModItems.ARCEUS_CROWN, "arceus_crown");
         simpleItem(ModItems.GREEN_GEM, "green_gem");
         
+        // Classic Orbs - random from category with normal stats
+        simpleOrbItem(ModItems.RANDOM_ORB, "orb_random");
+        simpleOrbItem(ModItems.LEGENDARY_ORB, "orb_legendary");
+        simpleOrbItem(ModItems.MYTHICAL_ORB, "orb_mythical");
+        simpleOrbItem(ModItems.PARADOX_ORB, "orb_paradox");
+        
         // Special Orbs - use special textures (fallback to default)
         simpleOrbItem(ModItems.SHINY_ORB, "orb_shiny");
         simpleOrbItem(ModItems.ULTIMATE_ORB, "orb_ultimate");
@@ -106,6 +112,10 @@ public class ModItemModelProvider implements DataProvider {
                  // Mythical Pokémon with matching texture names
                  "mew", "celebi", "jirachi", "deoxys", "darkrai" -> pokemonId;
             // Default fallback for textures not yet created
+            // add a case for all paradow orbs
+            case "orb_paradox_shiny", "orb_paradox_ultimate", "orb_paradox_ultimate_shiny", "orb_paradox" -> "orb_paradox";
+            case "orb_mythical_shiny", "orb_mythical_ultimate", "orb_mythical_ultimate_shiny", "orb_mythical" -> "orb_mythical";
+            case "orb_legendary_shiny", "orb_legendary_ultimate", "orb_legendary_ultimate_shiny", "orb_legendary" -> "orb_legendary";
             default -> "orb_default";
         };
     }

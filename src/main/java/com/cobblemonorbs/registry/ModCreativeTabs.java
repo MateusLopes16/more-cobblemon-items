@@ -29,6 +29,12 @@ public class ModCreativeTabs {
                 output.accept(ModItems.ARCEUS_CROWN.get());
                 output.accept(ModItems.GREEN_GEM.get());
                 
+                // Classic Random Orbs (normal random stats)
+                output.accept(ModItems.RANDOM_ORB.get());
+                output.accept(ModItems.LEGENDARY_ORB.get());
+                output.accept(ModItems.MYTHICAL_ORB.get());
+                output.accept(ModItems.PARADOX_ORB.get());
+                
                 // Special/Random Orbs
                 output.accept(ModItems.SHINY_ORB.get());
                 output.accept(ModItems.ULTIMATE_ORB.get());

@@ -1,0 +1,93 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Client",
+      "presentation": {
+        "group": "Mod Development - cobblemonorbs",
+        "order": 0
+      },
+      "projectName": "cobblemonorbs",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\build\\moddev\\clientRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\build\\moddev\\clientRunVmArgs.txt",
+        "-Dfml.modFolders\u003dcobblemonorbs%%C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Data",
+      "presentation": {
+        "group": "Mod Development - cobblemonorbs",
+        "order": 1
+      },
+      "projectName": "cobblemonorbs",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\build\\moddev\\dataRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\build\\moddev\\dataRunVmArgs.txt",
+        "-Dfml.modFolders\u003dcobblemonorbs%%C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "GameTestServer",
+      "presentation": {
+        "group": "Mod Development - cobblemonorbs",
+        "order": 2
+      },
+      "projectName": "cobblemonorbs",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\build\\moddev\\gameTestServerRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\build\\moddev\\gameTestServerRunVmArgs.txt",
+        "-Dfml.modFolders\u003dcobblemonorbs%%C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Server",
+      "presentation": {
+        "group": "Mod Development - cobblemonorbs",
+        "order": 3
+      },
+      "projectName": "cobblemonorbs",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\build\\moddev\\serverRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\build\\moddev\\serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dcobblemonorbs%%C:\\Users\\matlo\\Documents\\Code\\morecobbleitems\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {},
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    }
+  ]
+}

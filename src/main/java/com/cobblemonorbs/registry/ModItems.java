@@ -46,10 +46,23 @@ public class ModItems {
     // Random/Special Orbs
     // ============================================
     
+    // Classic Orbs (random from category, normal random stats)
+    public static final DeferredItem<Item> RANDOM_ORB = registerItem("random_orb",
+        () -> new RandomCategoryOrb(RandomCategoryOrb.SelectionCategory.ALL, SpawnSettings.DEFAULT));
+
+    public static final DeferredItem<Item> LEGENDARY_ORB = registerItem("legendary_orb",
+        () -> new RandomCategoryOrb(RandomCategoryOrb.SelectionCategory.LEGENDARY_ONLY, SpawnSettings.DEFAULT));
+
+    public static final DeferredItem<Item> MYTHICAL_ORB = registerItem("mythical_orb",
+        () -> new RandomCategoryOrb(RandomCategoryOrb.SelectionCategory.MYTHICAL_ONLY, SpawnSettings.DEFAULT));
+
+    public static final DeferredItem<Item> PARADOX_ORB = registerItem("paradox_orb",
+        () -> new RandomCategoryOrb(RandomCategoryOrb.SelectionCategory.PARADOX_ONLY, SpawnSettings.DEFAULT));
+
     // Shiny Orbs (random from category, guaranteed shiny)
     public static final DeferredItem<Item> SHINY_ORB = registerItem("shiny_orb",
         () -> new RandomCategoryOrb(RandomCategoryOrb.SelectionCategory.ALL, SpawnSettings.SHINY));
-    
+
     public static final DeferredItem<Item> LEGENDARY_SHINY_ORB = registerItem("legendary_shiny_orb",
         () -> new RandomCategoryOrb(RandomCategoryOrb.SelectionCategory.LEGENDARY_ONLY, SpawnSettings.SHINY));
     
